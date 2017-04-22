@@ -1,9 +1,13 @@
 # TODO
 
 ## 0.0.1
+- Updates Screen
 
-- Splash Screen
-- Login Screen
+## In progress
 - Orders Screen
 - Subscriptions Screen
-- Updates Screen
+
+## Done
+- Splash Screen
+- Login Screen
+- Navigation

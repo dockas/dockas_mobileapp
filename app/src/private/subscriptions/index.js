@@ -1,15 +1,25 @@
 import React from "react";
 import {
     View,
-    StyleSheet
+    StyleSheet,
+    BackAndroid
 } from "react-native";
-import Logo from "../components/logo";
-import LoginForm from "../components/login-form";
+import Logo from "../../components/logo";
 
 export  default class Component extends React.Component {
 
+    static navigationOptions = {
+        headerVisible: false,
+        title: "Assinaturas",
+        // tabBarVisible: false,
+    }
+
     componentDidMount() {
-        console.log("Hellr");
+        BackAndroid.addEventListener("hardwareBackPress", ()=>{
+            // TODO: Check if user want to leave
+            alert("Deseja sair?");
+            return true;
+        });
     }
 
     render () {
@@ -18,9 +28,6 @@ export  default class Component extends React.Component {
 
                 {/*Logo Form*/}
                 <Logo name={true} position="center" />
-
-                {/*Login Form*/}
-                <LoginForm />
 
             </View>
         );
@@ -34,16 +41,5 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#F5FCFF",
-        width: 380
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: "center",
-        margin: 10,
-    },
-    instructions: {
-        textAlign: "center",
-        color: "#333333",
-        marginBottom: 5,
-    },
+    }
 });

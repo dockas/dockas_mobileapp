@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
     StyleSheet,
     View,
@@ -8,6 +9,13 @@ import {
 
 export default class Component extends React.Component {
 
+    static propTypes = {
+        onLogin: PropTypes.func.isRequired
+    }
+
+    static defaultProps = {
+        onLogin: () => alert("Ok")
+    }
 
     constructor(props) {
         super(props);
@@ -16,6 +24,10 @@ export default class Component extends React.Component {
             login: "",
             password: ""
         };
+    }
+
+    login() {
+        this.props.onLogin();
     }
 
     render() {
@@ -35,22 +47,18 @@ export default class Component extends React.Component {
                     placeholder="Password"
                     style={styles.field}
                 />
-                    <View style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                    }}>
-                        <Text style={styles.button} onPress={() => alert("Ok")}>Solicitar Convite</Text>
+                <View style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                }}>
+                    <Text style={styles.button} onPress={() => alert("Ok")}>Solicitar Convite</Text>
 
-                        <Text style={[styles.button, styles.left]} onPress={() => alert("Ok")}>Entrar</Text>
-                    </View>
-
-
+                    <Text style={[styles.button, styles.left]} onPress={this.props.onLogin}>Entrar</Text>
+                </View>
             </View>
         );
     }
 }
-
-
 
 const styles = StyleSheet.create({
     field: {
