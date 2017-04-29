@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     button: {
-        marginTop: 20,
+        marginTop: 40,
         color: "#333"
     },
     left: {

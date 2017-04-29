@@ -4,12 +4,12 @@ import {
     StyleSheet,
     BackAndroid
 } from "react-native";
-import Logo from "../../components/logo";
+import Logo from "../../commons/logo";
 
 export  default class Component extends React.Component {
 
     static navigationOptions = {
-        headerVisible: false,
+        header: null,
         title: "Assinaturas",
         // tabBarVisible: false,
     }

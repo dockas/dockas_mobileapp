@@ -1,6 +1,6 @@
-import Login from "./src/public/login/index";
-import Splash from "./src/public/splash/index";
-import Home from "./src/private/index";
+import Login from "./src/public/login";
+import Splash from "./src/public/splash";
+import Private from "./src/private";
 
 import { StackNavigator } from "react-navigation";
 
@@ -8,7 +8,7 @@ import { StackNavigator } from "react-navigation";
 const routes = StackNavigator({
     Splash: {screen: Splash},
     Login: {screen: Login},
-    Home: {screen: Home}
+    Private: {screen: Private}
 });
 
 routes.navigationOptions = {

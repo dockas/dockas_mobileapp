@@ -1,22 +1,21 @@
 import React from "react";
 import {
-    View,
-    StyleSheet
+    View
 } from "react-native";
-import Logo from "../../components/logo";
+import styles from "./styles";
+import Logo from "../../commons/logo";
+import utils from "../../commons/utils";
 
 export default class Component extends React.Component {
 
     static navigationOptions = {
-        headerVisible: false,
+        header: null,
     }
 
     componentDidMount() {
-        const { navigate } = this.props.navigation;
-        // Wait
         setTimeout(()=>{
-            navigate("Login");
-        }, 1000);
+            this.props.navigation.dispatch(utils.resetNavigationTo("Login"));
+        },2000);
     }
 
     render () {
@@ -29,12 +28,3 @@ export default class Component extends React.Component {
     }
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#F5FCFF",
-    }
-});

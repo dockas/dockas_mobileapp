@@ -1,5 +1,6 @@
-import Orders from "./orders/index";
-import Subscriptions from "./subscriptions/index";
+import Orders from "./orders";
+import Subscriptions from "./subscriptions/";
+import QRReader from "./qr-reader";
 
 import { TabNavigator } from "react-navigation";
 
@@ -7,7 +8,9 @@ import { TabNavigator } from "react-navigation";
 const routes = TabNavigator({
     Orders: {screen: Orders},
     Subscriptions: {screen: Subscriptions},
+    QRReader: {screen: QRReader},
 },{
+    header: null,
     tabBarPosition: "bottom",
     tabBarOptions: {
         style: {

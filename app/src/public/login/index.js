@@ -1,29 +1,25 @@
 import React from "react";
 import {
-    View,
-    StyleSheet,
-    BackAndroid
+    View
 } from "react-native";
-import Logo from "../../components/logo";
-import LoginForm from "../../components/login-form";
+import styles from "./styles";
+import Logo from "../../commons/logo";
+import LoginForm from "../../commons/login-form";
+import utils from "../../commons/utils";
 
 export default class Component extends React.Component {
 
     static navigationOptions = {
-        headerVisible: false,
+        header: null,
     };
 
-    handleBack() {
-        this.exitApp();
-        return true;
+    componentDidMount() {
+        setTimeout(() => {
+            this.props.navigation.dispatch(utils.resetNavigationTo("Private"));
+        }, 1000);
     }
 
-    // componentDidMount() {
-    //     BackAndroid.addEventListener("backPress", this.handleBack.bind(BackAndroid));
-    // }
-
     render () {
-        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
 
@@ -32,8 +28,7 @@ export default class Component extends React.Component {
 
                 {/*Login Form*/}
                 <LoginForm onLogin={()=>{
-                    BackAndroid.removeEventListener("backPress");
-                    navigate("Home", { user: {name: "Zé Salvino"} });
+                    this.props.navigation.dispatch(utils.resetNavigationTo("Private"));
                 }} />
 
             </View>
@@ -41,12 +36,3 @@ export default class Component extends React.Component {
     }
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#F5FCFF",
-    }
-});
