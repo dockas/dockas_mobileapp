@@ -6,6 +6,7 @@ import {
     Text,
     ListView,
 } from "react-native";
+import IconLabel from "../../commons/fa-icon-label";
 
 const rows = [
   {id: 0, order_id: "Pedido #453", ordered_at: "2017-02-21 10:03:42", price: 133.02, items: [{},{},{},{},{},{}], status: "delivered"},
@@ -43,7 +44,8 @@ export default class Component extends React.Component {
         // Hide Header
         header: null,
         // headerTitle: "Perfil",
-        // tabBarLabel: <FontAwesome color="white" style={{padding: 10}}>{Icons.userCircle}</FontAwesome>,
+        tabBarLabel: <IconLabel name="bell-o" label="Notificações" />
+        // tabBarLabel: "Orders",
         // headerTintColor: "white",
         // headerStyle: {
         //     backgroundColor: "#1ba39c",

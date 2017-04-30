@@ -5,12 +5,13 @@ import {
     BackAndroid
 } from "react-native";
 import Logo from "../../commons/logo";
+import IconLabel from "../../commons/fa-icon-label";
 
 export  default class Component extends React.Component {
 
     static navigationOptions = {
         header: null,
-        title: "Assinaturas",
+        tabBarLabel: <IconLabel name="calendar" label="Assinaturas" />
         // tabBarVisible: false,
     }
 

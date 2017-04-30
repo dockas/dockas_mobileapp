@@ -3,9 +3,9 @@ import {
     View
 } from "react-native";
 import styles from "./styles";
-import Logo from "../../commons/logo";
-import LoginForm from "../../commons/login-form";
-import utils from "../../commons/utils";
+import Logo from "../commons/logo";
+import LoginForm from "../commons/login-form";
+import utils from "../commons/utils";
 
 export default class Component extends React.Component {
 
@@ -15,8 +15,8 @@ export default class Component extends React.Component {
 
     componentDidMount() {
         setTimeout(() => {
-            this.props.navigation.dispatch(utils.resetNavigationTo("Private"));
-        }, 1000);
+            this.props.navigation.dispatch(utils.resetNavigationTo("Home"));
+        }, 300);
     }
 
     render () {
@@ -28,7 +28,7 @@ export default class Component extends React.Component {
 
                 {/*Login Form*/}
                 <LoginForm onLogin={()=>{
-                    this.props.navigation.dispatch(utils.resetNavigationTo("Private"));
+                    this.props.navigation.dispatch(utils.resetNavigationTo("Home"));
                 }} />
 
             </View>

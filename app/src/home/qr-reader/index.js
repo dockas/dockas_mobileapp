@@ -5,12 +5,14 @@ import {
 import styles from "./styles";
 import { NavigationActions } from "react-navigation";
 import QRReader from "../../commons/qr-reader";
+import IconLabel from "../../commons/fa-icon-label";
 
 export  default class Component extends React.Component {
 
     static navigationOptions = {
         header: null,
-        title: "QR Reader",
+        tabBarLabel: <IconLabel name="qrcode" label="QR Reader" />
+        // title: "QR Reader",
         // tabBarVisible: false,
     }
 

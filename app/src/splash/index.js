@@ -3,8 +3,8 @@ import {
     View
 } from "react-native";
 import styles from "./styles";
-import Logo from "../../commons/logo";
-import utils from "../../commons/utils";
+import Logo from "../commons/logo";
+import utils from "../commons/utils";
 
 export default class Component extends React.Component {
 
@@ -14,7 +14,7 @@ export default class Component extends React.Component {
 
     componentDidMount() {
         setTimeout(()=>{
-            this.props.navigation.dispatch(utils.resetNavigationTo("Login"));
+            this.props.navigation.dispatch(utils.resetNavigationTo("Home"));
         },2000);
     }
 

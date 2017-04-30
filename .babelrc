@@ -1,3 +1,9 @@
 {
-"presets": ["react-native"]
+    "presets": ["react-native"],
+    "plugins": [
+        "autobind-class-methods",
+        "transform-class-properties",
+        "transform-export-extensions",
+        "add-module-exports"
+    ]
 }
